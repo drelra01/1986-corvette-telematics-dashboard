@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telematics Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="header">
+      <h1>Telematic Dashboard</h1>
+      <p>Pre-OBD Live Vehicle Data</p>
+      <a class="logout-button" href="/logs">Trip Logs</a>
+      <a class="logout-button" href="/summary">Trip Summary</a>
+      <a class="logout-button" href="/logout">Logout</a>
+
+  <div class="dashboard">
+      <div class="card">
+          <h2>RPM</h2>
+          <p id="rpm">{{ data.rpm }}</p>
+      </div>
+
+      <div class="card">
+          <h2>Coolant Temp</h2>
+          <p id="coolant">{{ data.coolant_temp }} °F</p>
+      </div>
+
+      <div class="card">
+          <h2>Throttle</h2>
+          <p id="throttle">{{ data.throttle }}%</p>
+      </div>
+
+      <div class="card">
+          <h2>Battery</h2>
+          <p id="battery">{{ data.battery }} V</p>
+      </div>
+
+      <div class="card">
+          <h2>Speed</h2>
+          <p id="speed">{{ data.speed }} MPH</p>
+      </div>
+
+      <div class="card">
+          <h2>Engine Load</h2>
+          <p id="engine_load">{{ data.engine_load }}%</p>
+      </div>
+
+      <div class="card">
+          <h2>Battery Health</h2>
+          <p id="battery_health">{{ data.battery_health }}</p>
+      </div>
+
+      <div class="card">
+          <h2>Coolant Status</h2>
+          <p id="coolant_status">{{ data.coolant_status }}</p>
+      </div>
+
+  </div>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
