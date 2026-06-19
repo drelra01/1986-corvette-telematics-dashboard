@@ -22,6 +22,6 @@ My main responsibility was developing the web interface for the system. I used F
 
 ## Group Project Source
 
-/!\  Web Interface will have some changes /!\
+This project was completed as part of a group project. This repository highlights my web interface contribution, including the Flask dashboard, live data display, login access, trip logs, summary statistics, and vehicle-health indicators, including how the other members did their part.
 
-https://github.com/SamuelCooper1105/FP9/tree/main
+Original group project source: [FP9 Repository](https://github.com/SamuelCooper1105/FP9/tree/main)
