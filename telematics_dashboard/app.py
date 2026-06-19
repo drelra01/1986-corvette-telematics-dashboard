@@ -1,9 +1,12 @@
+import os
 from flask import Flask, render_template, jsonify, request, redirect, session
 from aldl_reader import get_car_data
 from database import setup_database, save_car_data, get_recent_data, get_trip_summary
 
-app = Flask(__name__)
-app.secret_key = "my_secret_key"
+app = Flask(__name__)     # Demo-safe settings for public GitHub repository
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", "demo_secret_key_for_school_project")
+DEMO_USERNAME = os.environ.get("DASHBOARD_USERNAME", "demo")
+DEMO_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "demo")
 
 def add_metrics(data):
     engine_load = (data["throttle"] * 0.7) + (data["rpm"] / 3000 * 30)
@@ -35,9 +38,9 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
 
-        if username == "admin" and password == "project525":
-            session["logged_in"] = True
-            return redirect("/dashboard")
+        if username == DEMO_USERNAME and password == DEMO_PASSWORD:
+             session["logged_in"] = True
+             return redirect("/dashboard")
         else:
             error = "Wrong username or password"
     return render_template("login.html", error=error)
